@@ -32,30 +32,30 @@ export default function CountriesData({darkMode}) {
     return (
         <>
             <Head />
-            <div className="bodyy">
+            <div className={`bodyy  `}>
             <SearchInput onSearch={getCountryByName} />
             <FilterContries onSelect={getCountryByRegion} />
             <div className={`grid  `}>
                 {
                     countries.map((country) => (
                         <>
-                            <div className={`${darkMode ? 'dark-background' : 'light-background'} card  `}  >
+                            <div className={`card ${darkMode ? 'dark-background' : 'light-background'} `} >
+                                <div className={`${darkMode ? 'dark-background' : 'light-background'}`}>
                                 <Link to={`/country/${country.name.common}`}>
-                                    <div className="img">
+                                    <div className="img  ">
 
-                                        <img src={country.flags.png} alt="img" />
+                                        <img className={``} src={country.flags.png} alt="img" />
                                     </div>
                                 </Link>
-                                <div className={`${darkMode ? 'dark-background' : 'light-background'}`}>
-                                <div className={`content  ${darkMode ? 'dark-background' : 'light-background'} ${darkMode ? 'dark-text' : 'light-text'}`}>
-                                    <h3>{country.name.common}</h3>
                                 </div>
-                                <div className={`info ${darkMode ? 'dark-background' : 'light-background'}`}>
-                                    <div className={` ${darkMode ? 'dark-text' : 'light-text'}`}>population:{country.population}</div>
-                                    <div className={` ${darkMode ? 'dark-text' : 'light-text'}`}>Region: {country.region}  </div> 
-                                    <div className={` ${darkMode ? 'dark-text' : 'light-text'}`}>capital: {country.capital} </div>
+                                <div className={`info ${darkMode ? 'dark-background' : 'light-background'}   `}>
+                                     <h3 className={`${darkMode ? 'dark-background' : 'light-background'}   `}>{country.name.common}</h3>
+                                    <div className={`  `}>population:{country.population}</div>
+                                    <div className={`    `}>Region: {country.region}  </div> 
+                                    <div className={`    `}>capital: {country.capital} </div>
                                 </div>
-                                </div>
+                                
+
                             </div>
 
                         </>

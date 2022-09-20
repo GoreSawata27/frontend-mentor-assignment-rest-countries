@@ -15,30 +15,28 @@ export default function CountryInfo({darkMode}) {
     }, [countryName]);
 
     return (
-        <>
-            <div className={`infoC `} >
+        <div className={`${darkMode ? 'light-background' : 'dark-background'}`} >
+            <div className={`infoC   `} >
                 <button className="backBtn">
-                    <Link to="/">&#8249;&#8249;</Link>
+                    <Link to="/">&#8249;Back</Link>
                 </button>
 
                 {country.map((country, index) => (
-                    <div className="card" key={index}>
+                    <div className={`card ${darkMode ? 'light-elements' : 'dark-elements'}`} key={index}>
                         <div className="img">
                             <img src={country.flags.png} alt="img" />
                         </div>
-                        <div className="content">
-                            <h3>{country.name.common}</h3>
-                            </div>
-
-                            <div className="info">
-                                    <div>population:{country.population}</div>
-                                    <div>Region: {country.region}  </div>
-                                    <div>capital: {country.capital} </div>
+                        <div className={`info ${darkMode ? 'light-elements' : 'dark-elements'}    `}>
+                                     <h3 className={`${darkMode ? 'light-text' : 'dark-text'}   `}>{country.name.common}</h3>
+                                    <div className={`${darkMode ? 'light-text' : 'dark-text'}     `}>population:{country.population}</div>
+                                    <div className={`${darkMode ? 'light-text' : 'dark-text'}      `}>Region: {country.region}  </div> 
+                                    <div className={`${darkMode ? 'light-text' : 'dark-text'}      `}>capital: {country.capital} </div>
+                                </div>
                                 
-                        </div>
+                        
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
